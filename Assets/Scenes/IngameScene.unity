@@ -1647,29 +1647,33 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5906569327928994909, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.9003
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.9003
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.9003
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -692.21
+      value: -692.01
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -203.4
+      value: -204
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.31
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 8588928286056020293, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2691,7 +2695,7 @@ Transform:
   m_GameObject: {fileID: 446267220}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.35, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4775,7 +4779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gamblePin: {fileID: 1509677785}
   _dicePrefab: {fileID: 1428430448}
-  _maxEffects: 2
+  _maxEffects: 10
 --- !u!114 &1123654413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4788,10 +4792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ea3e0be49c067409d25b991acea46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamblePin: {fileID: 0}
-  DicePin: {fileID: 0}
-  hitCount: 0
-  pinRenderer: {fileID: 0}
 --- !u!4 &1123654414
 Transform:
   m_ObjectHideFlags: 0
@@ -6313,7 +6313,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 119928189}
   m_HandleRect: {fileID: 119928188}
   m_Direction: 2
-  m_Value: 0.999998
+  m_Value: 0.9999983
   m_Size: 0.75581396
   m_NumberOfSteps: 0
   m_OnValueChanged:

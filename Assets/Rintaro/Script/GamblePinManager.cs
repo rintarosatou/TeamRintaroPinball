@@ -14,14 +14,17 @@ public class GamblePinManager : MonoBehaviour
     private int _effectCount = 0;
     private MoneyManager _moneyManager;
 
+    private int hitCount = 0;
+    private Renderer pinRenderer;
+
     private void Start()
     {
-        _moneyManager = FindObjectOfType<MoneyManager>();
         _moneyManager = FindObjectOfType<MoneyManager>();
         if (_moneyManager == null)
         {
             Debug.LogError("MoneyManagerがシーンに見つかりませんでした！");
         }
+      
     }
 
     // GamblePinの当たり判定で呼び出される
@@ -30,13 +33,19 @@ public class GamblePinManager : MonoBehaviour
         if (_effectCount >= _maxEffects) return;
 
         int amount = Random.value < 0.5f ? -2000 : 2000;
+        Debug.Log($"Gamble効果発動: {amount}");
+
         if (_moneyManager != null)
         {
-            if (amount > 0) _moneyManager.AddMoney(amount);
-            else _moneyManager.AddMoney(amount); // そのままマイナスでもOK
+            _moneyManager.AddMoney(amount);
+        }
+        else
+        {
+            Debug.LogWarning("MoneyManagerがnullです！");
         }
 
         _effectCount++;
+        Debug.Log($"効果回数: {_effectCount}");
 
         if (_effectCount >= _maxEffects)
         {
@@ -44,5 +53,15 @@ public class GamblePinManager : MonoBehaviour
             Instantiate(_dicePrefab, pinTransform.position, pinTransform.rotation, pinTransform.parent);
             Destroy(_gamblePin);
         }
+        if (hitCount >= 10)
+        {
+            ChangeColor();
+        }
+        void ChangeColor()
+        {
+            pinRenderer.material.color = Color.red;
+        }
     }
 }
+
+
