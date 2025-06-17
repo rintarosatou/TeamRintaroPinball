@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 585099969604923237}
   - component: {fileID: 2681276656981361796}
   m_Layer: 2
-  m_Name: Capsule
+  m_Name: GamblePin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0dcebe2e00bcc14fb41799bdc652a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildCost: 1000
+  _buildCost: 0
   _isOneTimeOnly: 0
   _defultBankrollPrefab: {fileID: 5906569327928994909, guid: f38566aa0194ee04db9cadf5141883d6, type: 3}
   _bankrollParentName: BankrollParent
