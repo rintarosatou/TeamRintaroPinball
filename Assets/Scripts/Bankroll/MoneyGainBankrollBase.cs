@@ -52,4 +52,5 @@ public abstract class MoneyGainBankrollBase : BankrollBase
     /// バンクロールにボールが当たった時に呼び出したい処理
     /// </summary>
     public abstract void OnBankrollHit(GameObject ballObject);
+   
 }

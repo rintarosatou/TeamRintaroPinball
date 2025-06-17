@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GamblePinManager : MonoBehaviour
@@ -13,10 +14,6 @@ public class GamblePinManager : MonoBehaviour
 
     private int _effectCount = 0;
     private MoneyManager _moneyManager;
-
-    private int hitCount = 0;
-    private Renderer pinRenderer;
-
     private void Start()
     {
         _moneyManager = FindObjectOfType<MoneyManager>();
@@ -24,7 +21,7 @@ public class GamblePinManager : MonoBehaviour
         {
             Debug.LogError("MoneyManagerがシーンに見つかりませんでした！");
         }
-      
+
     }
 
     // GamblePinの当たり判定で呼び出される
@@ -47,21 +44,36 @@ public class GamblePinManager : MonoBehaviour
         _effectCount++;
         Debug.Log($"効果回数: {_effectCount}");
 
+        StartCoroutine(WaitForSecondsExample(1.0f)); // 1秒待機
+
+        //IEnumerator WaitForSecondsExample(float seconds)
+        //{
+        //    yield return new WaitForSeconds(seconds);
+        //    Debug.Log("指定した時間後に実行されました！");
+        //}
+
+        //if (_effectCount >= _maxEffects)
+        //{
+        //    Transform pinTransform = _gamblePin.transform;
+        //    Instantiate(_dicePrefab, pinTransform.position, pinTransform.rotation, pinTransform.parent);
+        //    Destroy(_gamblePin);
+        //}
+
+    }
+    private IEnumerator WaitForSecondsExample(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
         if (_effectCount >= _maxEffects)
         {
             Transform pinTransform = _gamblePin.transform;
             Instantiate(_dicePrefab, pinTransform.position, pinTransform.rotation, pinTransform.parent);
             Destroy(_gamblePin);
         }
-        if (hitCount >= 10)
-        {
-            ChangeColor();
-        }
-        void ChangeColor()
-        {
-            pinRenderer.material.color = Color.red;
-        }
+
+        yield return new WaitForSeconds(seconds);
     }
+
 }
 
 

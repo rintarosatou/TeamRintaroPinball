@@ -49,4 +49,5 @@ public class MoneyManager : MonoBehaviour
         }
         SetMoneyText();
     }
+    
 }
