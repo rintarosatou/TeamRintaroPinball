@@ -31,33 +31,28 @@ public class GamblePinManager : MonoBehaviour
 
         int amount = Random.value < 0.5f ? -2000 : 2000;
         Debug.Log($"Gamble効果発動: {amount}");
-
         if (_moneyManager != null)
         {
-            _moneyManager.AddMoney(amount);
+            int currentMoney = _moneyManager.Money;
+            if (amount >= 0)
+            {
+                _moneyManager.AddMoney(amount);
+            }
+            else
+            {
+                // 減らす金額が現在の所持金を超えないように調整
+                int decreaseAmount = Mathf.Min(-amount, currentMoney);
+                _moneyManager.DecreaseMoney(decreaseAmount);
+            }
         }
         else
         {
             Debug.LogWarning("MoneyManagerがnullです！");
         }
-
         _effectCount++;
         Debug.Log($"効果回数: {_effectCount}");
 
         StartCoroutine(WaitForSecondsExample(1.0f)); // 1秒待機
-
-        //IEnumerator WaitForSecondsExample(float seconds)
-        //{
-        //    yield return new WaitForSeconds(seconds);
-        //    Debug.Log("指定した時間後に実行されました！");
-        //}
-
-        //if (_effectCount >= _maxEffects)
-        //{
-        //    Transform pinTransform = _gamblePin.transform;
-        //    Instantiate(_dicePrefab, pinTransform.position, pinTransform.rotation, pinTransform.parent);
-        //    Destroy(_gamblePin);
-        //}
 
     }
     private IEnumerator WaitForSecondsExample(float seconds)

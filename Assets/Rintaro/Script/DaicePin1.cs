@@ -39,8 +39,10 @@ public class DaicePin1 : MonoBehaviour
                 }
                 else
                 {
-                    moneyManager.DecreaseMoney(-delta);
-                }
+                // 減らす金額が現在の所持金を超えないようにする
+                int decreaseAmount = Mathf.Min(-delta, originalMoney);
+                moneyManager.DecreaseMoney(decreaseAmount);
+            }
 
                 // StartCoroutine(WaitForSecondsExample(2.0f)); // 2秒待機
 
