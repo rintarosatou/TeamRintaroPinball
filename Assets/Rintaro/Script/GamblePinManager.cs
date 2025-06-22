@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class GamblePinManager : MonoBehaviour
+public class GamblePinManager : MoneyGainBankrollBase
 {
     [Header("GamblePin（最初のピン）")]
     [SerializeField] private GameObject _gamblePin;
@@ -22,6 +22,10 @@ public class GamblePinManager : MonoBehaviour
             Debug.LogError("MoneyManagerがシーンに見つかりませんでした！");
         }
 
+    }
+    public override void OnBankrollHit(GameObject ballObject)
+    {
+        TriggerEffect();
     }
 
     // GamblePinの当たり判定で呼び出される

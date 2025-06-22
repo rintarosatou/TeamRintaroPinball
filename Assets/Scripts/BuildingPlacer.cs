@@ -53,6 +53,7 @@ public class BuildingPlacer : MonoBehaviour
         {
             if (_plungerTrigger.IsBall) //ボールがスタート地点にいるかを判定
             {
+                Debug.Log($"BankrollPrefabは存在:{_bankrollPrefab != null}");
                 BankrollBase bankrollBase = _bankrollPrefab.GetComponent<BankrollBase>();
                 int buildCost = bankrollBase.BuildCost;
                 if (CheckBuildBankroll(buildCost))
