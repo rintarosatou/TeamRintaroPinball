@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cacf4084080420f4fa24b776af1e7d95
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - moneyManager: {fileID: 1896504849866214672, guid: 8be46082b41eadd46b6b9c9ac9d602c8, type: 3}
+  - pinObject: {fileID: 1896171888053930656, guid: 797651fe763e79047abad273fe170d4c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
