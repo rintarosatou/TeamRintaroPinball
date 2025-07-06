@@ -7237,10 +7237,5 @@ SceneRoots:
   - {fileID: 246791524}
   - {fileID: 3725172172196298206}
   - {fileID: 1734796213}
-<<<<<<< HEAD
-  - {fileID: 910704967}
-  - {fileID: 1123654414}
-  - {fileID: 1601021390}
-=======
   - {fileID: 1418033233}
->>>>>>> 4923a0d5c9be88a8b5efa39d6fc40e0b667cdbec
+
