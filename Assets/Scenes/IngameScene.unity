@@ -736,11 +736,11 @@ PrefabInstance:
     - target: {fileID: 2909140760100545099, guid: 41aa75241b8c9c0479da5b52e20c89c9, type: 3}
       propertyPath: _bankrollPrefab
       value: 
-      objectReference: {fileID: 2152648709808867241, guid: 60ee403b6117db54181d25864fde6e02, type: 3}
+      objectReference: {fileID: 6542716566488699191, guid: 9c0bd8c04f27d1b4ca637b88d7cefa45, type: 3}
     - target: {fileID: 2909140760100545099, guid: 41aa75241b8c9c0479da5b52e20c89c9, type: 3}
       propertyPath: _bankrollPreviewPrefab
       value: 
-      objectReference: {fileID: 3014238554251691306, guid: 0bfa497ba51776340bf53855fb2b41ea, type: 3}
+      objectReference: {fileID: 6542716566488699191, guid: 9c0bd8c04f27d1b4ca637b88d7cefa45, type: 3}
     - target: {fileID: 4440546842315981014, guid: 41aa75241b8c9c0479da5b52e20c89c9, type: 3}
       propertyPath: m_Name
       value: BankrollButtonPrefab (9)
@@ -5485,53 +5485,6 @@ MonoBehaviour:
   _hideTime: 1
   _fadeTime: 2
   _warningText: {fileID: 2017036215}
---- !u!1 &1601021388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1601021390}
-  - component: {fileID: 1601021389}
-  m_Layer: 0
-  m_Name: WarpPinHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1601021389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601021388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7182908150cceaf4ea0059a77e2b39bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bankrollParent: {fileID: 6770570548258896502, guid: 128ec4e802b25094da909ced93962306, type: 3}
-  warptrans: []
-  warpDestination: {x: 0, y: 0, z: 0}
---- !u!4 &1601021390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601021388}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.374414, y: -0.3379916, z: 0.51112515}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1608228466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6250,8 +6203,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 119928189}
   m_HandleRect: {fileID: 119928188}
   m_Direction: 2
-  m_Value: 0.9999977
-  m_Size: 0.7558139
+  m_Value: 0.9999983
+  m_Size: 0.755814
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7238,4 +7191,5 @@ SceneRoots:
   - {fileID: 3725172172196298206}
   - {fileID: 1734796213}
   - {fileID: 1418033233}
-
+  - {fileID: 910704967}
+  - {fileID: 1123654414}
