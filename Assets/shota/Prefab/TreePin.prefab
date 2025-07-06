@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5853527015337391327}
   - component: {fileID: 7105929669604202545}
   - component: {fileID: 3864472337185388538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TreePin
-  m_TagString: DefultBankroll
+  m_TagString: Bankroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
