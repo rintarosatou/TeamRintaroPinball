@@ -5,10 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
 public class WarpBankroll : BankrollBase
 {
-
     //[Header("吸引の強さ")]
     //[SerializeField] private float _inhalePower = 10f;
     //[Header("ボールのプレハブ")]
@@ -17,6 +15,8 @@ public class WarpBankroll : BankrollBase
     [SerializeField] private float _shootPower = 1f;
     [Header("クールタイム")]
     [SerializeField] private float _intervalTime = 10f;
+    [Header("ボールがワープするまでの待機時間")]
+    [SerializeField] private float _warpDelay = 0.5f;
     //[Header("効果範囲")]
     //[SerializeField] private float _effectRadius = 5f;
     private float _timer;
@@ -93,12 +93,9 @@ private void Update()
             _warpPinHolder.WarpRun(transform.position);
             //WarpPinHolderからワープ先の位置を受け取る。
             Vector3 destinationPosition = _warpPinHolder.warpDestination;
-
             Transform pinTransform = transform;
-
             // ピンの前方にずらす
             destinationPosition -= pinTransform.forward * 0.5f;
-
             RaycastHit hit;
             Vector3 rayOrigin = destinationPosition + Vector3.up * 5f; // 上からRayを飛ばす
 
@@ -110,7 +107,6 @@ private void Update()
                 }
             }
             //destinationPosition.z += -1.5f;
-
             //ボールとワープピンの当たり判定を無くす
             Collider ballCollider = ballObject.GetComponent<Collider>();
             // シーン上のすべての WarpPin を取得（WarpPin スクリプトがアタッチされている前提）
@@ -140,21 +136,9 @@ private void Update()
                     Debug.Log("ボールがピンと重なっているため、当たり判定を復活させませんでした");
                 }
             }
-
             // ボールを指定された位置で生成
-            ballObject.transform.position = destinationPosition;
-
-            Rigidbody rb = ballObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                // ボールの初期速度をピンの前方方向に与える
-                Vector3 shootDirection = -transform.forward + Vector3.up * 0.2f; // 少し上向きに
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                rb.velocity = shootDirection.normalized * _shootPower; // _shootPower は速度の強さ（例：5f）
-            }
-
-            //ボール生成時にカウントする
+            StartCoroutine(WarpBallAfterDelay(ballObject, destinationPosition));
+            ////ボール生成時にカウントする
             //_ballManager.AddBallCount();
             //_timer = 0;
 
@@ -162,6 +146,31 @@ private void Update()
             //{
             //    Destroy(_ballRigidbody.gameObject);
             //}
+        }
+    }
+    private IEnumerator WarpBallAfterDelay(GameObject ball, Vector3 targetPosition)
+    {
+        //ボールをワープするまで姿だけ非表示する
+        Renderer ballRenderer = ball.GetComponent<Renderer>();
+        if (ballRenderer != null)
+        {
+            ballRenderer.enabled = false;
+        }
+
+        yield return new WaitForSeconds(_warpDelay); // 指定された秒数待つ
+        ball.transform.position = targetPosition;
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            Vector3 shootDirection = -transform.forward + Vector3.up * 0.2f;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.velocity = shootDirection.normalized * _shootPower;
+        }
+        //ボールを再表示する
+        if (ballRenderer != null)
+        {
+            ballRenderer.enabled = true;
         }
     }
 
