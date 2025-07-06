@@ -22,6 +22,7 @@ public class BuildingPlacer : MonoBehaviour
     private PlungerTrigger _plungerTrigger;
     private WarningUI _warningUI;
     private MoneyManager _moneyManager;
+    private WarpPinHolder _warpSet;
 
 
     private void Awake()
@@ -29,6 +30,7 @@ public class BuildingPlacer : MonoBehaviour
         _plungerTrigger = FindObjectOfType<PlungerTrigger>();
         _warningUI = FindObjectOfType<WarningUI>();
         _moneyManager = FindObjectOfType<MoneyManager>();
+        _warpSet = FindObjectOfType<WarpPinHolder>();
     }
     
     private void Update()
@@ -69,6 +71,7 @@ public class BuildingPlacer : MonoBehaviour
                         UseMoney(buildCost);
                         //設置できる数を減らす処理
                         _bankrollButton.DecreaseCount();
+                        _warpSet.WarpRegister();
                     }
                 }
                 else
@@ -177,6 +180,13 @@ public class BuildingPlacer : MonoBehaviour
                     GameObject hitObject = collider.gameObject;
                     Instantiate(_defultBankrollPrefab, hitObject.transform.position, hitObject.transform.rotation, _bankrollParent.transform);
                     Destroy(hitObject);
+                    var warp = collider.gameObject.GetComponent<WarpBankroll>();
+                    if(warp != null)
+                    {
+                        warp.IsActive = false;
+                        _warpSet.WarpRegister();
+                    }
+                    
                     break;
                 }
             }
