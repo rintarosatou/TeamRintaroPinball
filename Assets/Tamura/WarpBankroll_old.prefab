@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -802736265091278295}
   - component: {fileID: 4822971592352117308}
   m_Layer: 2
-  m_Name: WarpBankroll
+  m_Name: WarpBankroll_old
   m_TagString: Bankroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   _defultBankrollPrefabName: DefultBankroll
   _shootPower: 5
   _intervalTime: 2
+  _warpDelay: 0.5
   IsActive: 0
 --- !u!136 &4822971592352117308
 CapsuleCollider:
