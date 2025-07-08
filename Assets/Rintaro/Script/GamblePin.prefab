@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2681276656981361796}
   m_Layer: 2
   m_Name: GamblePin
-  m_TagString: Untagged
+  m_TagString: Bankroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecbf43ff2910c54ba2bd78159608270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildCost: 0
+  _isOneTimeOnly: 0
+  _defultBankrollPrefab: {fileID: 0}
+  _bankrollParentName: BankrollParent
+  _defultBankrollPrefabName: DefultBankroll
   _gamblePin: {fileID: 4492910003449176897}
   _dicePrefab: {fileID: 1896171888053930656, guid: 797651fe763e79047abad273fe170d4c, type: 3}
   _maxEffects: 2
