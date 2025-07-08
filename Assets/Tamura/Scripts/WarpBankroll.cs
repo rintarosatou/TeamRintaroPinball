@@ -13,13 +13,12 @@ public class WarpBankroll : BankrollBase
     //[SerializeField] private GameObject _ballPrefab;
     [Header("射出する強さ")]
     [SerializeField] private float _shootPower = 1f;
-    [Header("クールタイム")]
-    [SerializeField] private float _intervalTime = 10f;
+    //[Header("クールタイム")]
+    //[SerializeField] private float _intervalTime = 10f;
     [Header("ボールがワープするまでの待機時間")]
     [SerializeField] private float _warpDelay = 0.5f;
     //[Header("効果範囲")]
     //[SerializeField] private float _effectRadius = 5f;
-    private float _timer;
     private BallManager _ballManager;
     private WarpPinHolder _warpPinHolder;
     private List<Rigidbody> _ballsInRange = new List<Rigidbody>();
@@ -32,14 +31,14 @@ public class WarpBankroll : BankrollBase
     void Start()
     {
         _ballManager = GameObject.FindObjectOfType<BallManager>();
-        _timer = _intervalTime;
+        //_timer = _intervalTime;
         //StartCoroutine(InhaleBallOnRange());
         _warpPinHolder = FindAnyObjectByType<WarpPinHolder>();
     }
 
 private void Update()
     {
-        _timer += Time.deltaTime;
+        //_timer += Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -88,8 +87,8 @@ private void Update()
     public override void OnBankrollEffect(GameObject ballObject) 
     {
         Debug.Log("ボールがあたった");
-        if (_timer > _intervalTime)
-        {
+        //if (_timer > _intervalTime)
+        //{
             _warpPinHolder.WarpRun(transform.position);
             //WarpPinHolderからワープ先の位置を受け取る。
             Vector3 destinationPosition = _warpPinHolder.warpDestination;
@@ -146,7 +145,7 @@ private void Update()
             //{
             //    Destroy(_ballRigidbody.gameObject);
             //}
-        }
+        //}
     }
     private IEnumerator WarpBallAfterDelay(GameObject ball, Vector3 targetPosition)
     {
