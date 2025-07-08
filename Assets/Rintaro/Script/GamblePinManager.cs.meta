@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: eecbf43ff2910c54ba2bd78159608270
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _gamblePin: {fileID: 2532233350760178477, guid: 4e6f92e9b0ac8014c98f2616a2e7bf39, type: 3}
+  - _dicePrefab: {fileID: 1896171888053930656, guid: 797651fe763e79047abad273fe170d4c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
