@@ -131,7 +131,7 @@ MonoBehaviour:
   _rightRange: 30
   _leftRange: 30
   _addPower: 15
-  _intervalTime: 1
+  _intervalTime: 0.5
 --- !u!135 &5814434316930851949
 SphereCollider:
   m_ObjectHideFlags: 0
