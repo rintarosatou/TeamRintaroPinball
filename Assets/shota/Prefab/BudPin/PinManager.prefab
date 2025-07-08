@@ -48,14 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   budPin: {fileID: 1131454811598298498}
   treePin: {fileID: 5504214912579334573}
-  budPinHitsPerReward: 2
-  budPinRewardTimesToSwitch: 2
-  treePinHitThreshold: 2
+  budPinHitsPerReward: 1
+  budPinRewardTimesToSwitch: 1
+  treePinHitThreshold: 1
   moneyManager: {fileID: 0}
   coinPrefab: {fileID: 6715490309923439118, guid: 17615472871c5364aa819430552db408, type: 3}
   coinSpawnCount: 10
   coinLifetime: 10
-  coinScatterRadius: 3
+  coinScatterRadius: 2
 --- !u!1001 &1229924331515252038
 PrefabInstance:
   m_ObjectHideFlags: 0

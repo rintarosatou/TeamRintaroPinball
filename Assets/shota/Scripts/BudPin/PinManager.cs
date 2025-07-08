@@ -99,7 +99,7 @@ public class PinManager : MonoBehaviour
                 );
 
             Vector3 spawnPos = treePin.transform.position + randomOffset;
-            spawnPos.y += 1.1f;
+            spawnPos.y = 0.01f;
 
             GameObject coin = Instantiate(coinPrefab, spawnPos, Quaternion.identity);
             Coin coinScript = coin.GetComponent<Coin>();

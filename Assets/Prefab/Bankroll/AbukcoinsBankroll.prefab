@@ -123,7 +123,6 @@ MonoBehaviour:
   _buildCost: 1000
   _isOneTimeOnly: 0
   _defultBankrollPrefab: {fileID: 0}
-  _bankrollParent: {fileID: 0}
   _bankrollParentName: BankrollParent
   _defultBankrollPrefabName: DefultBankroll
   _addMoney: 100
