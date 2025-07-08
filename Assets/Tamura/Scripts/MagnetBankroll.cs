@@ -27,7 +27,7 @@ public class MagnetBankroll : BankrollBase
         _timer += Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(_timer >_intervalTime)
         {
